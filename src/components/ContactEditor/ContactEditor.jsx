@@ -14,8 +14,6 @@ export default function ContactEditor() {
   return (
     <form onSubmit={handleSubmit}>
       <textarea value={name} onChange={handleChange}></textarea>
-
-      <button tupe="submit">Coздать</button>
     </form>
   );
 }
