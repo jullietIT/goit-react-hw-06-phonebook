@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import { WrapperForm, Label, Input, Button } from './ContactForm.styled';
 import { getContacts } from 'redux/selectors';
 // Импортируем хук
@@ -31,7 +30,11 @@ export const ContactForm = () => {
   const contacts = useSelector(getContacts);
   const handleSubmit = event => {
     event.preventDefault();
-    if (contacts.some(e => e.name === name)) {
+    if (
+      contacts.some(
+        contact => contact.name.tolowerCase() === name.toLowerCase()
+      )
+    ) {
       alert(`${name} is already in contacts`);
     } else {
       dispatch(addContacts(name, number));
@@ -71,8 +74,4 @@ export const ContactForm = () => {
       </form>
     </WrapperForm>
   );
-};
-
-ContactForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
 };
