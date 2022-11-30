@@ -6,11 +6,11 @@ import { ListContact, Button } from './ContactList.styled';
 
 const ContactList = () => {
   const contacts = useSelector(getContacts);
-  const filter = useSelector(getFilter);
+  const filters = useSelector(getFilter);
   const dispatch = useDispatch();
 
   const visibleContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
+    contact.name.includes(filters.toLowerCase())
   );
 
   return (

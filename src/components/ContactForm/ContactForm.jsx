@@ -32,7 +32,7 @@ export const ContactForm = () => {
     event.preventDefault();
     if (
       contacts.some(
-        contact => contact.name.tolowerCase() === name.toLowerCase()
+        contact => contact.name.toLowerCase() === name.toLowerCase()
       )
     ) {
       alert(`${name} is already in contacts`);
