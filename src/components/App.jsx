@@ -17,7 +17,7 @@ export default function App() {
         <Title2>Contacts</Title2>
         <Title3>Find contact by name</Title3>
 
-        {!!contacts.lengt && ( /// рендер пошуку якщо є данні
+        {!!contacts.length && ( /// рендер пошуку якщо є данні
           <>
             <Filter />
             <ContactList />
